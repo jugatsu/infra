@@ -1,2 +1,7 @@
 credentials
 .vagrant
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+.terraform/
