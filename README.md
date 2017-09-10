@@ -375,3 +375,79 @@ Delete image
 ```bash
 $ gcloud compute instances delete reddit-app --zone europe-west1-b
 ```
+
+## Lesson 8
+**Using terraform to define infrastructure as code**
+
+```bash
+$ terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  + google_compute_firewall.firewall_puma
+      id:                                                  <computed>
+      allow.#:                                             "1"
+      allow.931060522.ports.#:                             "1"
+      allow.931060522.ports.0:                             "9292"
+      allow.931060522.protocol:                            "tcp"
+      destination_ranges.#:                                <computed>
+      name:                                                "allow-puma-default"
+      network:                                             "default"
+      project:                                             <computed>
+      self_link:                                           <computed>
+      source_ranges.#:                                     "1"
+      source_ranges.1080289494:                            "0.0.0.0/0"
+      target_tags.#:                                       "1"
+      target_tags.1799682348:                              "reddit-app"
+
+  + google_compute_instance.app
+      id:                                                  <computed>
+      boot_disk.#:                                         "1"
+      boot_disk.0.auto_delete:                             "true"
+      boot_disk.0.device_name:                             <computed>
+      boot_disk.0.disk_encryption_key_sha256:              <computed>
+      boot_disk.0.initialize_params.#:                     "1"
+      boot_disk.0.initialize_params.0.image:               "reddit-base-v20170910-1505034508"
+      boot_disk.0.source:                                  <computed>
+      can_ip_forward:                                      "false"
+      create_timeout:                                      "4"
+      label_fingerprint:                                   <computed>
+      machine_type:                                        "g1-small"
+      metadata.%:                                          "1"
+      metadata.sshKeys:                                    "appuser:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCl/5z5W9kOtBPfwp3eCtnBD54kIE2FrgH6j2JoEaYUgh0k3ZygoFFPPClCvfptP6gzon8chtvLBnVKLhEiYoZrcfL/qZHvQ/2WXIPY6xwmKkUiachYMB8St+bQ6KctpWEpPfUPpb0rzvZNDltGps/BEcNRHH8Q8WijAZNpLwSlevAKpvpwzYlJF+J0UlDVoEMN6xG+IkSWcBJ46sqTBvbfBTBC7Mmux2VGN/l+CXlv+DtTGWBAA9vC421+zPPAi0gFyW2t8LftR9z+QGYpCbcWq3zYuu0YoqJQ3mK/3ZcNLoLYVixr0RsxVsesgUf/dqvVby2SAAd7qfEvEnjMRpGv appuser\n"
+      metadata_fingerprint:                                <computed>
+      name:                                                "reddit-app"
+      network_interface.#:                                 "1"
+      network_interface.0.access_config.#:                 "1"
+      network_interface.0.access_config.0.assigned_nat_ip: <computed>
+      network_interface.0.address:                         <computed>
+      network_interface.0.name:                            <computed>
+      network_interface.0.network:                         "default"
+      network_interface.0.subnetwork_project:              <computed>
+      scheduling.#:                                        <computed>
+      self_link:                                           <computed>
+      tags.#:                                              "1"
+      tags.1799682348:                                     "reddit-app"
+      tags_fingerprint:                                    <computed>
+      zone:                                                "europe-west1-b"
+
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+------------------------------------------------------------------------
+
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+
+```
