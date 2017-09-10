@@ -122,8 +122,6 @@ ak@someinternalhost:~$
 
 **Using the gcloud command-line tool**
 
-***
-
 Create instance with startup script `startup.sh`
 
 ```bash
@@ -175,9 +173,6 @@ $ gcloud compute instances delete reddit-app --zone europe-west1-b
 
 ## Lesson 7
 **Using packer to build images**
-
-***
-
 
 #### Prepare new project
 Create project
