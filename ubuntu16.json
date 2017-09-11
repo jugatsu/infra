@@ -1,0 +1,50 @@
+{
+  "builders": [
+    {
+      "account_file": "{{ user `account_file` }}",
+      "disk_name": "{{ user `disk_name` }}",
+      "disk_size": "{{ user `disk_size` }}",
+      "disk_type": "{{ user `disk_type` }}",
+      "image_description": "{{ user `image_description` }}",
+      "image_family": "{{ user `image_family` }}",
+      "image_name": "{{ user `image_name` }}-v{{isotime \"20060102\"}}-{{ timestamp }}",
+      "machine_type": "{{ user `machine_type` }}",
+      "network": "{{ user `network` }}",
+      "project_id": "{{ user `project_id` }}",
+      "source_image_family": "{{ user `source_image_family` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "startup_script_file": "{{ user `startup_script_file` }}",
+      "tags":"{{ user `tags` }}",
+      "type": "googlecompute",
+      "zone": "{{ user `zone` }}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/install_ruby.sh"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/install_mongodb.sh",
+      "execute_command": "sudo {{ .Vars }} {{ .Path }}"
+    }
+  ],
+  "variables": {
+    "account_file": "",
+    "disk_name": "",
+    "disk_size": "10",
+    "disk_type": "pd-standard",
+    "image_description": "Image with base stack for running reddit app.",
+    "image_family": "",
+    "image_name": "reddit-base",
+    "machine_type": "f1-micro",
+    "network": "default",
+    "project_id": null,
+    "source_image_family": null,
+    "startup_script_file": "",
+    "tags": "",
+    "ssh_username": "appuser",
+    "zone": "europe-west1-b"
+  }
+}
