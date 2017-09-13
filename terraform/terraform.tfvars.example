@@ -1,0 +1,9 @@
+app_disk_image = "reddit-base-v20170910-1505034508"
+
+app_private_key_path = "~/.ssh/appuser"
+
+app_public_key_path = "~/.ssh/appuser.pub"
+
+app_username = "appuser"
+
+project = "otus-infra"
