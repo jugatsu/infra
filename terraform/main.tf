@@ -36,11 +36,13 @@ resource "google_compute_instance" "app" {
     private_key = "${file("${var.private_key_path}")}"
   }
 
+  // Copy puma systemd unit to instance to reuse in deploy script
   provisioner "file" {
     source      = "files/puma.service"
     destination = "/tmp/puma.service"
   }
 
+  // Deploy reddit app
   provisioner "remote-exec" {
     script = "files/deploy.sh"
   }
