@@ -14,7 +14,7 @@ resource "google_compute_instance" "app" {
   // Boot disk for the instance
   boot_disk {
     initialize_params {
-      image = "${var.disk_image}"
+      image = "${var.app_disk_image}"
     }
   }
 
@@ -26,14 +26,14 @@ resource "google_compute_instance" "app" {
 
   // Metadata key/value pairs to make available from within the instance
   metadata {
-    sshKeys = "appuser:${file("${var.public_key_path}")}"
+    sshKeys = "${var.app_username}:${file("${var.app_public_key_path}")}"
   }
 
   connection {
     type        = "ssh"
-    user        = "${var.username}"
+    user        = "${var.app_username}"
     agent       = false
-    private_key = "${file("${var.private_key_path}")}"
+    private_key = "${file("${var.app_private_key_path}")}"
   }
 
   // Copy puma systemd unit to instance to reuse in deploy script
