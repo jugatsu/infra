@@ -3,17 +3,14 @@ variable "app_disk_image" {
 }
 
 variable "app_private_key_path" {
-  default     = "~/.ssh/appuser"
   description = "Path to private key used by provisioners to ssh access"
 }
 
 variable "app_public_key_path" {
-  default     = "~/.ssh/appuser.pub"
   description = "Path to public key used for ssh access"
 }
 
 variable "app_username" {
-  default     = "appuser"
   description = "The user that is used for connection"
 }
 
