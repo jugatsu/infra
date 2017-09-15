@@ -14,26 +14,28 @@ resource "google_compute_instance" "app" {
   // Boot disk for the instance
   boot_disk {
     initialize_params {
-      image = "${var.app_disk_image}"
+      image = "${var.disk_image}"
     }
   }
 
   // Networks to attach to the instance
   network_interface {
     network       = "default"
-    access_config = {}
+    access_config = {
+      nat_ip = "${google_compute_address.app_ip.address}"
+    }
   }
 
   // Metadata key/value pairs to make available from within the instance
   metadata {
-    sshKeys = "${var.app_username}:${file("${var.app_public_key_path}")}"
+    sshKeys = "${var.username}:${file("${var.public_key_path}")}"
   }
 
   connection {
     type        = "ssh"
-    user        = "${var.app_username}"
+    user        = "${var.username}"
     agent       = false
-    private_key = "${file("${var.app_private_key_path}")}"
+    private_key = "${file("${var.private_key_path}")}"
   }
 
   // Copy puma systemd unit to instance to reuse in deploy script
@@ -60,4 +62,23 @@ resource "google_compute_firewall" "firewall_puma" {
 
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["reddit-app"]
+}
+
+// Ensure firewall rule for SSH is present
+resource "google_compute_firewall" "firewall_ssh" {
+  name    = "default-allow-ssh"
+  description = "Allow SSH from anywhere"
+  network = "default"
+
+  allow = {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+}
+
+// Ensure static IP address for instance is present
+resource "google_compute_address" "app_ip" {
+  name = "reddit-app-ip"
 }

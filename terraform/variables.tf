@@ -1,16 +1,16 @@
-variable "app_disk_image" {
+variable "disk_image" {
   description = "The image from which to initialize this disk"
 }
 
-variable "app_private_key_path" {
+variable "private_key_path" {
   description = "Path to private key used by provisioners to ssh access"
 }
 
-variable "app_public_key_path" {
+variable "public_key_path" {
   description = "Path to public key used for ssh access"
 }
 
-variable "app_username" {
+variable "username" {
   description = "The user that is used for connection"
 }
 
