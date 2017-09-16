@@ -1,3 +1,43 @@
-project = "otus-infra"
+#################################
+# Google Cloud Provider variables
+#################################
 
-public_key_path = "~/.ssh/appuser.pub"
+project = "otus-infra-stage"
+
+#################################
+# App variables
+#################################
+
+app_name = "reddit-app"
+
+app_tags = ["reddit-app"]
+
+app_disk_image = "base-ruby-20170915-1505475681"
+
+app_username = "appuser"
+
+app_public_key_path = "~/.ssh/appuser.pub"
+
+app_firewall_name = "allow-puma-default"
+
+app_firewall_ports = ["9292"]
+
+#################################
+# DB variables
+#################################
+
+db_name = "reddit-db"
+
+db_tags = ["reddit-app"]
+
+db_disk_image = "base-mongodb-20170915-1505475927"
+
+db_username = "appuser"
+
+db_public_key_path = "~/.ssh/appuser.pub"
+
+db_firewall_name = "allow-mongodb-default"
+
+db_firewall_ports = ["27017"]
+
+db_source_tags = ["reddit-app"]
