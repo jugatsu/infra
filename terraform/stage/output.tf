@@ -2,9 +2,9 @@
 output "app_connection_info" {
   value = <<EOF
 
-IP address of ${var.app_name} instance is: ${module.app.app_external_ip}
+IP address of "${var.app_name}" instance is: ${module.app.app_external_ip}
 
-Connect to instance using SSH:
+Connect to "${var.app_name}" instance using SSH:
 
  ssh -o "StrictHostKeyChecking=no" ${var.app_username}@${module.app.app_external_ip} -i ~/.ssh/${var.app_username}
 EOF
