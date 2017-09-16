@@ -4,12 +4,13 @@ provider "google" {
   region  = "${var.region}"
 }
 
-// Ensure firewall rule for SSH access is present and configured
+/* Ensure firewall rule for SSH access to all instances
+   is present and configured */
 module "firewall_ssh" {
-  source = "../modules/vpc/firewall"
-  name = "default-allow-ssh"
+  source      = "../modules/vpc/firewall"
+  name        = "default-allow-ssh"
   description = "Allow SSH from anywhere"
-  ports = ["22"]
+  ports       = ["22"]
 }
 
 // Ensure app instance is present and configured
