@@ -36,3 +36,33 @@ variable "app_tags" {
 }
 
 variable "app_username" {}
+
+#################################
+# DB variables
+#################################
+
+variable "db_disk_image" {
+  description = ""
+}
+
+variable "db_firewall_name" {}
+
+variable "db_firewall_ports" {
+  type = "list"
+}
+
+variable "db_name" {}
+
+variable "db_public_key_path" {
+  description = ""
+}
+
+variable "db_source_tags" {
+  type = "list"
+}
+
+variable "db_tags" {
+  type = "list"
+}
+
+variable "db_username" {}
