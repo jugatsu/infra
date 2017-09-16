@@ -4,21 +4,22 @@ provider "google" {
   region  = "${var.region}"
 }
 
-// Ensure app instance is present
+// Ensure firewall rule for SSH access is present and configured
+module "firewall_ssh" {
+  source = "../modules/vpc/firewall"
+  name = "default-allow-ssh"
+  description = "Allow SSH from anywhere"
+  ports = ["22"]
+}
+
+// Ensure app instance is present and configured
 module "app" {
   source          = "../modules/app"
-  app_disk_image  = "${var.app_disk_image}"
-  public_key_path = "${var.public_key_path}"
-}
-
-// Ensure db instance is present
-module "db" {
-  source          = "../modules/db"
-  db_disk_image   = "${var.db_disk_image}"
-  public_key_path = "${var.public_key_path}"
-}
-
-// Ensure firewall is configured
-module "vpc" {
-  source = "../modules/vpc"
+  name            = "${var.app_name}"
+  tags            = "${var.app_tags}"
+  disk_image      = "${var.app_disk_image}"
+  username        = "${var.app_username}"
+  public_key_path = "${var.app_public_key_path}"
+  firewall_name   = "${var.app_firewall_name}"
+  firewall_ports  = "${var.app_firewall_ports}"
 }
