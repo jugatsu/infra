@@ -15,4 +15,5 @@ module "db_firewall" {
   network     = "${var.network}"
   ports       = "${var.firewall_ports}"
   source_tags = "${var.source_tags}"
+  target_tags = "${var.target_tags}"
 }

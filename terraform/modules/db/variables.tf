@@ -39,6 +39,12 @@ variable "tags" {
   type        = "list"
 }
 
+variable "target_tags" {
+  description = "A list of target tags for firewall rule"
+  default     = []
+  type        = "list"
+}
+
 variable "username" {
   description = "Username used for ssh access"
 }
