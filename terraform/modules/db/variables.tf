@@ -29,6 +29,12 @@ variable "public_key_path" {
   description = "Path to public key used for ssh access"
 }
 
+variable "source_ranges" {
+  description = "A list of source CIDR ranges that firewall rule applies to"
+  default     = ["0.0.0.0/0"]
+  type        = "list"
+}
+
 variable "source_tags" {
   description = "A list of source tags for firewall"
   type        = "list"
