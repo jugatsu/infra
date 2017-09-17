@@ -2,7 +2,7 @@
 # Google Cloud Provider variables
 #################################
 
-project = "otus-infra-prod"
+project = "YOUR_PROJECT_PROD"
 
 #################################
 # SSH access variables

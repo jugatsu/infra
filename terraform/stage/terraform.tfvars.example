@@ -2,7 +2,7 @@
 # Google Cloud Provider variables
 #################################
 
-project = "otus-infra-stage"
+project = "YOUR_PROJECT_STAGE"
 
 #################################
 # App variables
