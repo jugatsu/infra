@@ -1,0 +1,10 @@
+/*
+    Example values for GCS backend configuration.
+
+    Feel free to change values to meet your environment.
+
+*/
+
+bucket  = "YOUR_BUCKET_NAME"
+path    = "PATH_TO_STATE_FILE_INSIDE_BUCKET"
+project = "YOUR_PROJECT"
