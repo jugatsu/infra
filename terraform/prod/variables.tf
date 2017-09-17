@@ -34,7 +34,7 @@ variable "app_firewall_name" {
 
 variable "app_firewall_ports" {
   description = "List of ports and/or port ranges to allow"
-  type = "list"
+  type        = "list"
 }
 
 variable "app_name" {
@@ -47,7 +47,7 @@ variable "app_public_key_path" {
 
 variable "app_tags" {
   description = "A list of tags to attach to the front-end"
-  type = "list"
+  type        = "list"
 }
 
 variable "app_username" {
@@ -68,7 +68,7 @@ variable "db_firewall_name" {
 
 variable "db_firewall_ports" {
   description = "List of ports and/or port ranges to allow to access database"
-  type = "list"
+  type        = "list"
 }
 
 variable "db_name" {
@@ -81,12 +81,18 @@ variable "db_public_key_path" {
 
 variable "db_source_tags" {
   description = "A list of source tags for firewall rule to attach to database"
-  type = "list"
+  type        = "list"
 }
 
 variable "db_tags" {
   description = "A list of tags to attach to the database"
-  type = "list"
+  type        = "list"
+}
+
+variable "db_target_tags" {
+  description = "A list of target tags for database firewall rule"
+  default     = []
+  type        = "list"
 }
 
 variable "db_username" {
