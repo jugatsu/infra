@@ -36,6 +36,7 @@ module "db" {
   public_key_path = "${var.db_public_key_path}"
   firewall_name   = "${var.db_firewall_name}"
   firewall_ports  = "${var.db_firewall_ports}"
+  source_ranges   = "${var.db_source_ranges}"
   source_tags     = "${var.db_source_tags}"
   target_tags     = "${var.db_target_tags}"
 }

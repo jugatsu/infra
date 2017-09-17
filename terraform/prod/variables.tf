@@ -79,6 +79,12 @@ variable "db_public_key_path" {
   description = "Path to public key used for ssh access to database"
 }
 
+variable "db_source_ranges" {
+  description = "A list of source CIDR ranges that firewall rule applies to"
+  default     = ["0.0.0.0/0"]
+  type        = "list"
+}
+
 variable "db_source_tags" {
   description = "A list of source tags for firewall rule to attach to database"
   type        = "list"
