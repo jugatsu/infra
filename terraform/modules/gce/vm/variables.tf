@@ -1,18 +1,25 @@
 variable "access_config" {
-  default = {}
-  type    = "map"
+  default     = {}
+  description = " IPs via which instance can be accessed via the Internet"
+  type        = "map"
 }
 
-variable "disk_image" {}
+variable "disk_image" {
+  description = "The image from which to initialize the disk"
+}
 
 variable "machine_type" {
-  default = "g1-small"
+  default     = "g1-small"
+  description = "The machine type to create"
 }
 
-variable "name" {}
+variable "name" {
+  description = "A unique name for the instance"
+}
 
 variable "network" {
-  default = "default"
+  default     = "default"
+  description = "The name of the network to attach instance to"
 }
 
 variable "public_key_path" {
@@ -20,11 +27,15 @@ variable "public_key_path" {
 }
 
 variable "tags" {
-  type = "list"
+  description = "A list of tags to attach to the instance"
+  type        = "list"
 }
 
-variable "username" {}
+variable "username" {
+  description = "Username used for ssh access"
+}
 
 variable "zone" {
-  default = "europe-west1-b"
+  default     = "europe-west1-b"
+  description = "The zone that the instance should be created in"
 }

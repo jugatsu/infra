@@ -1,41 +1,41 @@
 variable "description" {
-  default = ""
+  default     = ""
+  description = "Textual description of firewall rule"
 }
 
-variable "name" {}
+variable "name" {
+  description = "A unique name for the firewall rule"
+}
 
 variable "network" {
-  default = "default"
+  default     = "default"
+  description = "The name of the network to attach instance to"
 }
 
 variable "ports" {
-  description = ""
+  description = "List of ports and/or port ranges to allow"
   type        = "list"
 }
 
 variable "protocol" {
-  description = ""
+  description = "The name of the protocol to allow"
   default     = "tcp"
 }
 
 variable "source_ranges" {
-  description = ""
-
-  default = [
-    "0.0.0.0/0",
-  ]
-
-  type = "list"
+  description = "A list of source CIDR ranges that firewall rule applies to"
+  default     = ["0.0.0.0/0"]
+  type        = "list"
 }
 
 variable "source_tags" {
-  description = ""
+  description = "A list of source tags for firewall rule"
   default     = []
   type        = "list"
 }
 
 variable "target_tags" {
-  description = ""
-  default = []
+  description = "A list of target tags for firewall rule"
+  default     = []
   type        = "list"
 }

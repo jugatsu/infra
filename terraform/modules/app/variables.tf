@@ -1,11 +1,28 @@
-variable "disk_image" {}
-
-variable "machine_type" {
-  default = "g1-small"
+variable "disk_image" {
+  description = "The image from which to initialize the disk"
 }
 
-variable "zone" {
-  default = "europe-west1-b"
+variable "firewall_name" {
+  description = "A unique name for firewall rule"
+}
+
+variable "firewall_ports" {
+  description = "List of ports and/or port ranges to allow"
+  type        = "list"
+}
+
+variable "machine_type" {
+  default     = "g1-small"
+  description = "The machine type to create"
+}
+
+variable "name" {
+  description = "A unique name for the instance"
+}
+
+variable "network" {
+  description = "The name of the network to attach instance to"
+  default     = "default"
 }
 
 variable "public_key_path" {
@@ -13,20 +30,15 @@ variable "public_key_path" {
 }
 
 variable "tags" {
-  type = "list"
+  description = "A list of tags to attach to the instance"
+  type        = "list"
 }
 
-variable "name" {}
-
-variable "network" {
-  description = ""
-  default     = "default"
+variable "username" {
+  description = "Username used for ssh access"
 }
 
-variable "username" {}
-
-variable "firewall_name" {}
-
-variable "firewall_ports" {
-  type = "list"
+variable "zone" {
+  default     = "europe-west1-b"
+  description = "The zone that the machine should be created in"
 }
