@@ -11,4 +11,7 @@
   tasks:
 
     - include: tasks/ruby.yml
+      tags: ruby
+
     - include: tasks/mongodb.yml
+      tags: mongodb
