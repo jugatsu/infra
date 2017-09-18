@@ -1,0 +1,14 @@
+---
+# file: main.yml
+
+- hosts: all
+  gather_facts: yes
+  become: yes
+
+  vars_files:
+    - vars.yml
+
+  tasks:
+
+    - include: tasks/ruby.yml
+    - include: tasks/mongodb.yml
