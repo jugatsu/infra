@@ -7,7 +7,7 @@
       "disk_type": "{{ user `disk_type` }}",
       "image_description": "{{ user `image_description` }}",
       "image_family": "{{ user `image_family` }}",
-      "image_name": "{{ user `image_name` }}-v{{isotime \"20060102\"}}-{{ timestamp }}",
+      "image_name": "{{ user `image_name` }}-{{isotime \"20060102\"}}-{{ timestamp }}",
       "machine_type": "{{ user `machine_type` }}",
       "network": "{{ user `network` }}",
       "project_id": "{{ user `project_id` }}",
