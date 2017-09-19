@@ -15,3 +15,9 @@
 
     - include: tasks/mongodb.yml
       tags: mongodb
+  handlers:
+
+    - name: reload mongod
+      service:
+        name: mongod
+        state: restarted
