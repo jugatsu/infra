@@ -22,7 +22,7 @@
   "provisioners": [
     {
       "type": "ansible",
-      "playbook_file": "../ansible/reddit_app/main.yml",
+      "playbook_file": "../ansible/packer_reddit_app/main.yml",
       "ansible_env_vars": [
         "ANSIBLE_NOCOWS=True",
         "ANSIBLE_RETRY_FILES_ENABLED=False"
