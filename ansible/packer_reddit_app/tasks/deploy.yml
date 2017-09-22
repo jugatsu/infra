@@ -9,6 +9,7 @@
   git:
     repo: "{{ reddit_app_repo_url }}"
     dest: "{{ reddit_app_dest }}"
+    version: monolith
 
 - name: Ensure application dependencies are present
   bundler:
