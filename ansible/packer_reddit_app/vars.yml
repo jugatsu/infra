@@ -1,8 +1,17 @@
 ---
-# file: vars.yml  
+# file: vars.yml
 
+reddit_app_dest: /home/{{ reddit_app_user }}/reddit-app
+reddit_app_repo_url: https://github.com/Artemmkin/reddit.git
+reddit_app_user: appuser
+reddit_app_db_host: 10.132.0.3
+reddit_app_env:
+  - DATABASE_URL={{ reddit_app_db_host }}
+
+reddit_mongodb_bind_ip: "{{ ansible_default_ipv4.address }}"
 reddit_mongodb_key: 0C49F3730359A14518585931BC711F9BA15703C6
 reddit_mongodb_repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu {{ ansible_distribution_release }}/mongodb-org/{{ reddit_mongodb_version | splitext | first }} multiverse
+reddit_mongodb_port: 27017
 reddit_mongodb_version: 3.4.7
 
 reddit_ruby_packages:

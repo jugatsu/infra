@@ -29,6 +29,13 @@
     cache_valid_time: 3600
     state: present
 
+- name: Ensure MongoDB is configured
+  template:
+    src: templates/mongod.conf.j2
+    dest: /etc/mongod.conf
+  notify:
+    - reload mongod
+
 - name: Ensure MongoDB service is running and enabled
   service:
     name: mongod

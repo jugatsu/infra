@@ -1,0 +1,30 @@
+---
+
+- name: Ensure application user is present
+  user:
+    name: "{{ reddit_app_user }}"
+    state: present
+
+- name: Ensure application code is present
+  git:
+    repo: "{{ reddit_app_repo_url }}"
+    dest: "{{ reddit_app_dest }}"
+    version: monolith
+
+- name: Ensure application dependencies are present
+  bundler:
+    state: present
+    chdir: "{{ reddit_app_dest }}"
+
+- name: Ensure application systemd unit is present
+  template:
+    src: templates/puma.service.j2
+    dest: /etc/systemd/system/puma.service
+  notify:
+    - reload puma
+
+- name: Ensure application service is started and enabled
+  service:
+    name: puma
+    enabled: yes
+    state: started

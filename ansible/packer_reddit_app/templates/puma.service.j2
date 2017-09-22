@@ -1,0 +1,17 @@
+[Unit]
+Description=Puma HTTP Server
+After=network.target mongod.service
+
+[Service]
+{% for item in reddit_app_env %}
+Environment={{ item }}
+{% endfor %}
+
+Type=simple
+User={{ reddit_app_user }}
+WorkingDirectory={{ reddit_app_dest }}
+ExecStart=/usr/local/bin/puma -b tcp://0.0.0.0:9292
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
