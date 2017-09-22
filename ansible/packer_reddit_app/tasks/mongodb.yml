@@ -34,7 +34,7 @@
     src: templates/mongod.conf.j2
     dest: /etc/mongod.conf
   notify:
-    - reload mongod  
+    - reload mongod
 
 - name: Ensure MongoDB service is running and enabled
   service:
