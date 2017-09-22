@@ -83,3 +83,29 @@ variable "db_tags" {
 variable "db_username" {
   description = "Username used for ssh access to database"
 }
+
+#################################
+# Service accounts
+#################################
+
+# service account for ansible dynamic inventory
+variable "ansible_service_account_account_id" {
+  description = "The ansble service account ID"
+}
+
+variable "ansible_service_account_display_name" {
+  description = "Display name for ansible service account"
+}
+
+variable "ansible_service_account_role" {
+  description = "The role that should be applied to ansible service account"
+}
+
+// Ensure that gcloud is within $PATH or provide full path to executable
+variable "ansible_service_account_gcloud" {
+  description = "Google's gcloud cli executable"
+}
+
+variable "ansible_service_account_key_path" {
+  description = "Path to created key file for ansible service account"
+}
