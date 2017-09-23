@@ -12,6 +12,13 @@ variable "region" {
 }
 
 #################################
+# Github Provider variables
+#################################
+
+variable "github_token" {}
+variable "github_organization" {}
+
+#################################
 # App variables
 #################################
 
