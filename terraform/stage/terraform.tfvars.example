@@ -2,7 +2,7 @@
 # Google Cloud Provider variables
 #################################
 
-project = "YOUR_PROJECT_STAGE"
+google_project = "YOUR_PROJECT_STAGE"
 
 #################################
 # Github variables
