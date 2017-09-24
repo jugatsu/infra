@@ -11,3 +11,4 @@
 # Ansible
 credentials
 *.retry
+roles-*
