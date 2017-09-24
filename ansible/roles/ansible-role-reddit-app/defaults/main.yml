@@ -1,0 +1,10 @@
+---
+# defaults file for ansible-role-reddit-app
+
+reddit_app_dest: /home/{{ reddit_app_user }}/reddit-app
+reddit_app_repo_url: https://github.com/Artemmkin/reddit.git
+reddit_app_repo_version: monolith
+reddit_app_user: appuser
+reddit_app_db_host: 127.0.0.1
+reddit_app_env:
+  - DATABASE_URL={{ reddit_app_db_host }}
