@@ -5,3 +5,7 @@
 - name: ansible-role-mongodb
   src: https://github.com/jugatsu-infra/ansible-role-mongodb
   version: master
+
+- name: ansible-role-ruby
+  src: https://github.com/jugatsu-infra/ansible-role-ruby
+  version: master
