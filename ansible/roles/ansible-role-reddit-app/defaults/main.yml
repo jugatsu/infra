@@ -1,6 +1,9 @@
 ---
 # defaults file for ansible-role-reddit-app
 
+# default environment variable
+env: local
+
 reddit_app_dest: /home/{{ reddit_app_user }}/reddit-app
 reddit_app_repo_url: https://github.com/Artemmkin/reddit.git
 reddit_app_repo_version: monolith

@@ -1,6 +1,10 @@
 ---
 # tasks file for ansible-role-reddit-app
 
+- name: Show info about the env this host belongs to
+  debug:
+    msg: "This host is in {{ env }} environment!!!"
+
 - name: Ensure application user is present
   user:
     name: "{{ reddit_app_user }}"
