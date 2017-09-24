@@ -1,8 +1,14 @@
 credentials
+# Vagrant
 .vagrant
+
+# Terraform
 *.tfstate
 *.tfstate.*.backup
 *.tfstate.backup
 *.tfvars
 .terraform/
+
+# Ansible
+credentials
 *.retry
