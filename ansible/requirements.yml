@@ -1,5 +1,7 @@
 ---
 
+- src: jdauphant.nginx
+
 - name: ansible-role-mongodb
   src: https://github.com/jugatsu-infra/ansible-role-mongodb
   version: master
