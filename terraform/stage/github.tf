@@ -17,3 +17,10 @@ resource "github_repository" "ansible_role_ruby" {
   has_issues       = true
   license_template = "bsd-2-clause"
 }
+
+resource "github_repository" "ansible_role_reddit_app" {
+  name             = "ansible-role-reddit-app"
+  description      = "Ansible Role for Reddit App (https://github.com/Artemmkin/reddit)"
+  has_issues       = true
+  license_template = "bsd-2-clause"
+}
