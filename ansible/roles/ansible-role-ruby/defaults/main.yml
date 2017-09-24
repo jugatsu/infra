@@ -1,0 +1,6 @@
+---
+# defaults file for ansible-role-ruby
+
+ruby_packages:
+  - ruby-full
+  - ruby-dev

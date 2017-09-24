@@ -1,0 +1,20 @@
+---
+# tasks file for ansible-role-ruby
+
+- name: Ensure all ruby dependencies are present
+  apt:
+    name: build-essential
+    state: present
+
+- name: Ensure ruby packages are present
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ ruby_packages }}"
+
+- name: Ensure bundler package is present
+  gem:
+    name: bundler
+    user_install: no
+    state: present
