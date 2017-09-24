@@ -1,3 +1,3 @@
 ---
 
-mongodb_bind_ip: "{{ ansible_default_ipv4.address }}"  
+mongodb_bind_ip: 0.0.0.0  
