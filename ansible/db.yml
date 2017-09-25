@@ -1,0 +1,6 @@
+---
+
+- hosts: tag_db
+  become: true
+  roles:
+    - ansible-role-mongodb

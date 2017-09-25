@@ -1,0 +1,15 @@
+---
+
+- src: jdauphant.nginx
+
+- name: ansible-role-mongodb
+  src: https://github.com/jugatsu-infra/ansible-role-mongodb
+  version: master
+
+- name: ansible-role-ruby
+  src: https://github.com/jugatsu-infra/ansible-role-ruby
+  version: master
+
+- name: ansible-role-reddit-app
+  src: https://github.com/jugatsu-infra/ansible-role-reddit-app
+  version: master

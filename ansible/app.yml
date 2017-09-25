@@ -1,0 +1,8 @@
+---
+
+- hosts: tag_app
+  become: true
+  roles:
+    - ansible-role-ruby
+    - ansible-role-reddit-app
+    - jdauphant.nginx
