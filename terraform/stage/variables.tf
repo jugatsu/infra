@@ -12,7 +12,7 @@ variable "google_region" {
 }
 
 variable "google_version" {
-  default = "~> 0.1"
+  default     = "~> 0.1"
   description = "The version of provider module"
 }
 
