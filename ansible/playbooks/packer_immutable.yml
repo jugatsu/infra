@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  become: true
+  roles:
+    - ansible-role-ruby
+    - ansible-role-mongodb
+    - ansible-role-reddit-app
