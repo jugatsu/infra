@@ -1,5 +1,6 @@
 # Vagrant
 .vagrant
+*.log
 
 # Terraform
 *.tfstate
