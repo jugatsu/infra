@@ -17,13 +17,6 @@ variable "google_version" {
 }
 
 #################################
-# Github Provider variables
-#################################
-
-variable "github_token" {}
-variable "github_organization" {}
-
-#################################
 # App variables
 #################################
 
