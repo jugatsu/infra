@@ -5,13 +5,6 @@
 google_project = "YOUR_PROJECT_STAGE"
 
 #################################
-# Github variables
-#################################
-
-github_token        = "YOUR_GIHUB_TOKEN"
-github_organization = "GITHUB_ORGANIZATION_NAME"
-
-#################################
 # App variables
 #################################
 
