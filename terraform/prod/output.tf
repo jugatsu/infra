@@ -1,11 +1,29 @@
-// Define output variable with info of how to connect to app instance
-output "app_connection_info" {
-  value = <<EOF
+// Define output variable with google project ID
+output "google_project" {
+  description = "The ID of the project"
+  value       = "${var.google_project}"
+}
 
-IP address of "${var.app_name}" instance is: ${module.app.app_external_ip}
+// Define output variable with google region
+output "google_region" {
+  description = "The region to operate under"
+  value       = "${var.google_region}"
+}
 
-Connect to "${var.app_name}" instance using SSH:
+// Define output variable with frontend external ip
+output "app_external_ip" {
+  description = "External IP for frontend instance"
+  value       = "${module.app.app_external_ip}"
+}
 
- ssh -o "StrictHostKeyChecking=no" ${var.app_username}@${module.app.app_external_ip} -i ~/.ssh/${var.app_username}
-EOF
+// Define output variable with database external ip
+output "db_external_ip" {
+  description = "External IP for database instance§"
+  value       = "${module.db.db_external_ip}"
+}
+
+// Define output variable with database internal ip
+output "db_internal_ip" {
+  description = "Internal IP for database instance"
+  value       = "${module.db.db_internal_ip}"
 }
