@@ -1,11 +1,3 @@
-// Configure the Google Cloud provider
-provider "google" {
-  version = "~> 0.1"
-
-  project = "${var.google_project}"
-  region  = "${var.google_region}"
-}
-
 /* Ensure firewall rule for SSH access to all instances
    is present and configured */
 module "firewall_ssh" {
