@@ -2,6 +2,8 @@
 provider "google" {
   project = "${var.project}"
   region  = "${var.region}"
+  project = "${var.google_project}"
+  region  = "${var.google_region}"
 }
 
 /* Ensure firewall rule for SSH access to all instances

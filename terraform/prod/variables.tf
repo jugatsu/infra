@@ -2,11 +2,11 @@
 # Google Cloud Provider variables
 #################################
 
-variable "project" {
+variable "google_project" {
   description = "The ID of the project"
 }
 
-variable "region" {
+variable "google_region" {
   default     = "europe-west1"
   description = "The region to operate under"
 }
