@@ -1,7 +1,7 @@
 // Configure the Google Cloud provider
 provider "google" {
-  project = "${var.project}"
-  region  = "${var.region}"
+  version = "= 0.1.3"
+
   project = "${var.google_project}"
   region  = "${var.google_region}"
 }
