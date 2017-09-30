@@ -11,11 +11,6 @@ variable "google_region" {
   description = "The region to operate under"
 }
 
-variable "google_version" {
-  default     = "~> 0.1"
-  description = "The version of provider module"
-}
-
 #################################
 # App variables
 #################################
