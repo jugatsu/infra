@@ -10,7 +10,7 @@ google_project = "YOUR_PROJECT_STAGE"
 
 app_disk_image      = "YOUR_APP_IMAGE"
 app_firewall_name   = "allow-puma-default"
-app_firewall_ports  = ["9292"]
+app_firewall_ports  = ["80"]
 app_name            = "reddit-app"
 app_public_key_path = "~/.ssh/appuser.pub"
 app_tags            = ["reddit-app"]
